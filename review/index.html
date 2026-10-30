@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hamster Hunter Bot: Intent Use Cases</title>
+<style>
+body{font:16px/1.6 system-ui,Segoe UI,Arial,sans-serif;max-width:1120px;margin:0 auto;padding:24px 16px;color:#1b1b1b;background:#fff}
+h1{font-size:1.8rem}h2{font-size:1.2rem;margin-top:2rem}a{color:#0b5fd1}img{max-width:100%;height:auto;border:1px solid #ccc;border-radius:8px}
+@media(prefers-color-scheme:dark){body{background:#151515;color:#e6e6e6}a{color:#6fb0ff}img{border-color:#333}}
+</style></head><body>
+<h1>Hamster Hunter Discord Bot: privileged intent use cases</h1>
+<p>Screenshots from the Hamster Hunter bot's moderator dashboard for the Hamstars Discord server. Member usernames are blurred.</p>
+
+<h2>Server Members intent: raid protection on join</h2>
+<p>When a member joins, the bot checks the account's age. Accounts made minutes before joining get a restricted role (shown as <em>ACCOUNT_AGE_FILTER</em>). Members who post in the bot-detection channel are muted and must verify or be removed (<em>HONEYPOT</em>); the leave event clears their pending check.</p>
+<p><img src="server-members-new-account-filter.png" alt="Mod log showing new accounts restricted on join by the account age filter, and honeypot timeouts"></p>
+
+<h2>Message Content intent: scam image moderation</h2>
+<p>A scam account posted a fake MrBeast cryptocurrency-casino promotion and fake &quot;withdrawal success&quot; screenshots across several channels on 15 October 2026. The bot's image check flagged each one as a known scam (95&ndash;99%), deleted it, and matched re-posts against the image blocklist. Discord's AutoMod can't check images, so this needs the attachments that Message Content provides.</p>
+<p><img src="message-content-scam-blocked.png" alt="Review queue showing MrBeast crypto casino scam images flagged as known scams and on the blocklist"></p>
+</body></html>
